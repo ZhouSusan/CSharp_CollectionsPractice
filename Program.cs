@@ -44,6 +44,21 @@
             {
                 System.Console.Write(row + " ");
             }
+
+
+            Console.WriteLine("\nList of Flavor Ice Cream: ");
+            List<string> iceCreamFlavors = new List<string>();
+            iceCreamFlavors.Add("Pistachos");
+            iceCreamFlavors.Add("Cookies n' Cream");
+            iceCreamFlavors.Add("Strawberry CheeseCake");
+            iceCreamFlavors.Add("Twix Deluxe");
+            iceCreamFlavors.Add("French Vanilla");
+            iceCreamFlavors.Add("Snores");
+
+            Console.WriteLine("Original Size of Ice Cream Flavor List: " + iceCreamFlavors.Count);
+            Console.WriteLine("\nThird Ice Cream Flavor is " + iceCreamFlavors[2]);
+            iceCreamFlavors.Remove(iceCreamFlavors[2]);
+            Console.WriteLine("After removal- New List Size is: " + iceCreamFlavors.Count);
         }
 
         static void PrintAllItems(int[] arr)
