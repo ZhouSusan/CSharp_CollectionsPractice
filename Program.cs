@@ -38,6 +38,12 @@
             foreach (var val in boolArr) {
                 Console.WriteLine(val);
             }
+
+            Console.WriteLine("\nMultipication Table");
+            foreach(var row in GenerateMultipilcationTable())
+            {
+                System.Console.Write(row + " ");
+            }
         }
 
         static void PrintAllItems(int[] arr)
@@ -46,6 +52,20 @@
             {
                 Console.WriteLine(item);
             }
+        }
+
+        static int [,] GenerateMultipilcationTable()
+        {
+            int[,] multiplicationTable = new int[10, 10];
+            for (int row = 0; row < 10; row++)
+            {
+                for (int col = 0; col < 10; col++)
+                {
+                    multiplicationTable[row, col] = (row + 1) * (col + 1);
+                }
+            }
+
+            return multiplicationTable;
         }
     }
 }
