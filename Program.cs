@@ -40,10 +40,7 @@
             }
 
             Console.WriteLine("\nMultipication Table");
-            foreach(var row in GenerateMultipilcationTable())
-            {
-                System.Console.Write(row + " ");
-            }
+            GenerateMultipilcationTable();
 
 
             Console.WriteLine("\nList of Flavor Ice Cream: ");
@@ -101,8 +98,11 @@
                 for (int col = 0; col < 10; col++)
                 {
                     multiplicationTable[row, col] = (row + 1) * (col + 1);
+                    Console.Write(String.Format("{0} ", multiplicationTable[row, col]));
                 }
+                Console.WriteLine(Environment.NewLine);
             }
+            Console.ReadLine();
 
             return multiplicationTable;
         }
