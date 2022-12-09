@@ -56,9 +56,33 @@
             iceCreamFlavors.Add("Snores");
 
             Console.WriteLine("Original Size of Ice Cream Flavor List: " + iceCreamFlavors.Count);
-            Console.WriteLine("\nThird Ice Cream Flavor is " + iceCreamFlavors[2]);
+            Console.WriteLine("Third Ice Cream Flavor is " + iceCreamFlavors[2]);
             iceCreamFlavors.Remove(iceCreamFlavors[2]);
             Console.WriteLine("After removal- New List Size is: " + iceCreamFlavors.Count);
+
+            Console.WriteLine("\nUser Info Dictionary: ");
+            Dictionary<string, string> userInfoDict = new Dictionary<string, string>();
+
+            //Set new key in the userFlavors dictonary with a name from the namesArr 
+            foreach(string name in namesArr)
+            {
+                userInfoDict.Add(name, null);
+                Console.WriteLine("Writing names: " + name);
+            }
+
+            //Random select an ice cream flavor from the list and store it as a value
+            Random rand = new Random();
+            List<string> userKeys = new List<string>(userInfoDict.Keys);
+            for (int k = 0; k < userKeys.Count; k++)
+            {
+                userInfoDict[userKeys[k]] = iceCreamFlavors[rand.Next(0, 5)];
+            }
+
+            //Loop through Dictionary and print each out each key, value pair
+            foreach(var entry in userInfoDict)
+            {
+                Console.WriteLine(entry.Key + ": " + entry.Value);
+            }
         }
 
         static void PrintAllItems(int[] arr)
